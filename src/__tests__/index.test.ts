@@ -301,6 +301,16 @@ const vectors: Array<TestVector> = [
     ],
   },
   {
+    name: 'NEAR',
+    coinType: 397,
+    passingVectors: [
+      {
+        text: 'a22477f6bc2edbdc435a977f8b0e4afa1fe69110.lockup.near',
+        hex: '0aff6865635ae11013a83835c019d44ec3f865145943f487ae82a8e7bed3a66b',
+      },
+    ],
+  },
+  {
     name: 'KSM',
     coinType: 434,
     passingVectors: [
