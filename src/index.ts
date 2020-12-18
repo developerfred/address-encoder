@@ -33,6 +33,7 @@ import  ripemd160  from 'ripemd160';
 import { Keccak } from 'sha3';
 import { filAddrDecoder, filAddrEncoder } from './filecoin/index';
 import { xmrAddressDecoder, xmrAddressEncoder } from './monero/xmr-base58';
+import { AddressUtils } from './nimq/AddressUtils';
 
 type EnCoder = (data: Buffer) => string;
 type DeCoder = (data: string) => Buffer;
@@ -930,6 +931,19 @@ function nanoAddressDecoder(data: string): Buffer {
   return Buffer.from(decoded).slice(0, -5);
 }
 
+
+function nimAddressEncoder(data: Buffer): string {
+  const address = AddressUtils.toUserFriendlyAddress(data);
+
+  return address;
+}
+
+function nimAddressDecoder(data: string): Buffer {
+  const decoded = nanoBase32Decode(data.slice(5));
+
+  return Buffer.from(decoded).slice(0, -5);
+}
+
 function etnAddressEncoder(data: Buffer): string {
   const buf = Buffer.concat([Buffer.from([18]), data]);
 
@@ -1061,6 +1075,7 @@ export const formats: IFormat[] = [
   eosioChain('FIO', 235, 'FIO'),
   getConfig('BSV', 236, bsvAddresEncoder, bsvAddressDecoder),
   getConfig('NEO', 239, bs58Encode, bs58Decode),
+  getConfig('NIM', 242, AddressUtils.)
   hexChecksumChain('EWT', 246),
   getConfig('ALGO', 283, algoEncode, algoDecode),
   getConfig('IOST', 291, bs58EncodeNoCheck, bs58DecodeNoCheck),

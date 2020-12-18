@@ -916,6 +916,15 @@ const vectors: Array<TestVector> = [
       { text: '3PAP3wkgbGjdd1FuBLn9ajXvo6edBMCa115', hex: '01575cb3839cef68f8b5650461fe707311e2919c73b945cf1edc'},
     ],
   },
+  {
+    name: 'NIM',
+    coinType: 242,
+    passingVectors: [
+      { text: 'NQ86 6D3H 6MVD 2JV4 N77V FNA5 M9BL 2QSP 1P6', hex: '01575cb3839cef68f8b5650461fe707311e2919c73b945cf1edc'},
+      { text: 'NQ36 CPYA UTCK VBBG L5GG 8D36 SNHM K8MH DD7X', hex: '01575cb3839cef68f8b5650461fe707311e2919c73b945cf1edc'},
+      { text: 'NQ76 E5NX K4S8 9RS9 65FC DQ8C H5ML SCYG 81XJ', hex: '01575cb3839cef68f8b5650461fe707311e2919c73b945cf1edc'},
+    ],
+  },
 
 ];
 
